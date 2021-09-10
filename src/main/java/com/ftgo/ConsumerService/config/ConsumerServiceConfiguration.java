@@ -40,12 +40,12 @@ public class ConsumerServiceConfiguration {
     }
 
     @Bean
-    public ConsumerCommandHandlers orderCommandHandlers(ConsumerService consumerService) {
+    public ConsumerCommandHandlers consumerCommandHandlers(ConsumerService consumerService) {
         return new ConsumerCommandHandlers(consumerService);
     }
 
     @Bean
-    public SagaCommandDispatcher orderCommandHandlersDispatcher(ConsumerCommandHandlers consumerCommandHandlers,
+    public SagaCommandDispatcher consumerCommandHandlersDispatcher(ConsumerCommandHandlers consumerCommandHandlers,
                                                                 SagaCommandDispatcherFactory sagaCommandDispatcherFactory) {
         return sagaCommandDispatcherFactory.make("consumerService",
                 consumerCommandHandlers.commandHandlers());

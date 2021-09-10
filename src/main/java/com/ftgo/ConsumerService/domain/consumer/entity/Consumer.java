@@ -24,7 +24,7 @@ public class Consumer {
     public Consumer() {}
 
     public Consumer(PersonName name) {
-        this.id = Math.abs(new Random().nextLong());
+        id = Math.abs(new Random().nextLong());
         this.name = name.transformEmbeddable();
     }
 
