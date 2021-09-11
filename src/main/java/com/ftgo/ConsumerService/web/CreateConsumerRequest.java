@@ -7,6 +7,8 @@ import lombok.Data;
 public class CreateConsumerRequest {
     private PersonName name;
 
+    public CreateConsumerRequest() {}
+
     public CreateConsumerRequest(PersonName name) {
         this.name = name;
     }
